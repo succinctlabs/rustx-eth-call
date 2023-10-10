@@ -17,7 +17,7 @@ contract EthCallOracleV1 {
 
     /// @notice The function id of the eth call oracle.
     bytes32 public constant FUNCTION_ID =
-        0xd657c5ca16b1e0bf0e82542028470c2372d4a0143d60c2eb33d05bcff316d89b;
+        0x3a935850aecabccfd63d22f90cc844fff3f3ee63cc08c62cd4105e14954b744d;
 
     /// @notice The nonce of the oracle.
     uint256 public nonce = 0;

@@ -8,7 +8,7 @@ contract RequestUpdateScript is Script {
     function run() public {
         vm.broadcast();
         EthCallOracleV1 s = EthCallOracleV1(
-            0x7645244Df283B31A31c840DE6da996fd49fD3c51
+            0xC4F29384D7c4797fB452bD3853EDb6c469448546 
         );
         s.request{value: 30 gwei * 1_000_000}(
             5,
