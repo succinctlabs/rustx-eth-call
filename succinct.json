@@ -2,7 +2,7 @@
     "$schema": "https://raw.githubusercontent.com/succinctlabs/succinctx/main/assets/schema.json",
     "entrypoints": [
         {
-            "name": "ethcall",
+            "name": "eth_call",
             "framework": "rustx",
             "baseDir": ".",
             "buildCommand": "cargo run --release --package circuits build && mv ./target/release/circuits ./build/circuits",
