@@ -5,7 +5,7 @@
             "name": "eth_call",
             "framework": "rustx",
             "baseDir": ".",
-            "buildCommand": "cargo run --release --package circuits build && mv ./target/release/circuits ./build/circuits",
+            "buildCommand": "mkdir -p build && cargo run --release --package circuits build && mv ./target/release/circuits ./build/circuits",
             "proveCommand": "./build/circuits prove input.json"
         }
     ]
