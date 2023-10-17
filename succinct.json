@@ -1,0 +1,12 @@
+{
+    "$schema": "https://raw.githubusercontent.com/succinctlabs/succinctx/main/assets/schema.json",
+    "entrypoints": [
+        {
+            "name": "ethcall",
+            "framework": "rustx",
+            "baseDir": ".",
+            "buildCommand": "cargo run --release --package circuits build && mv ./target/release/circuits ./build/circuits",
+            "proveCommand": "./build/circuits prove input.json"
+        }
+    ]
+}

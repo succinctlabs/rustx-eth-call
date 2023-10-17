@@ -22,13 +22,15 @@ interface IFunctionGateway {
         external
         view
         returns (bytes memory);
+
+    function isCallback() external view returns (bool);
 }
 
 contract EthCallOracleV1 {
     /// @notice The address of the function gateway.
     address public constant FUNCTION_GATEWAY = 0xE304f6B116bE5e43424cEC36a5eFd0B642E0dC95;
 
-    /// @notice The function id of the eth call oracle.
+    /// @notice The function id of the ethcall oracle.
     bytes32 public constant FUNCTION_ID =
         0x197e4275632346e0d02a22fcb54b6db1966fd734325b2ea40fef04485ded2163;
 
@@ -58,7 +60,7 @@ contract EthCallOracleV1 {
 
     /// @notice The callback function for the oracle.
     function handleCallback(bytes memory output, bytes memory context) external {
-        require(msg.sender == FUNCTION_GATEWAY);
+        require(msg.sender == FUNCTION_GATEWAY && IFunctionGateway(FUNCTION_GATEWAY).isCallback());
         uint256 requestId = abi.decode(context, (uint256));
         emit EthCallOracleV1Update(requestId, output);
     }
