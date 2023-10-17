@@ -32,7 +32,7 @@ contract EthCallOracleV1 {
 
     /// @notice The function id of the ethcall oracle.
     bytes32 public constant FUNCTION_ID =
-        0x197e4275632346e0d02a22fcb54b6db1966fd734325b2ea40fef04485ded2163;
+        0xd963c3c7a53ffeb8851d88bda4a30c4557dd0bf4025f291569ccad25c0d1dc2f;
 
     /// @notice The nonce of the oracle.
     uint256 public nonce = 0;
@@ -40,7 +40,7 @@ contract EthCallOracleV1 {
     /// @dev The event emitted when a callback is received.
     event EthCallOracleV1Update(uint256 requestId, bytes result);
 
-    /// @notice The entrypoint for requesting an oracle update.
+    /// @notice An example of using the oracle to request a callback.
     function requestCallback(
         uint32 chainId,
         uint64 blockNumber,
@@ -58,14 +58,14 @@ contract EthCallOracleV1 {
         nonce++;
     }
 
-    /// @notice The callback function for the oracle.
+    /// @notice An example of a callback handler.
     function handleCallback(bytes memory output, bytes memory context) external {
         require(msg.sender == FUNCTION_GATEWAY && IFunctionGateway(FUNCTION_GATEWAY).isCallback());
         uint256 requestId = abi.decode(context, (uint256));
         emit EthCallOracleV1Update(requestId, output);
     }
 
-    /// @notice The entrypoint for requesting an oracle update.
+    /// @notice An example of using the oracle to request a call.
     function requestCall(
         uint32 chainId,
         uint64 blockNumber,
@@ -78,13 +78,14 @@ contract EthCallOracleV1 {
             abi.encode(chainId, blockNumber, fromAddress, toAddress, data),
             address(this),
             abi.encodeWithSelector(
-                this.entrypoint.selector, chainId, blockNumber, fromAddress, toAddress, data
+                this.callEntrypoint.selector, chainId, blockNumber, fromAddress, toAddress, data
             ),
             1000000
         );
     }
 
-    function entrypoint(
+    /// @notice An example of a call entrypoint.
+    function callEntrypoint(
         int32 chainId,
         uint64 blockNumber,
         address fromAddress,
@@ -94,6 +95,6 @@ contract EthCallOracleV1 {
         bytes memory output = IFunctionGateway(FUNCTION_GATEWAY).verifiedCall(
             FUNCTION_ID, abi.encode(chainId, blockNumber, fromAddress, toAddress, data)
         );
-        emit EthCallOracleV1Update(0, output); 
+        emit EthCallOracleV1Update(0, output);
     }
 }
