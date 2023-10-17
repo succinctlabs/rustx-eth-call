@@ -26,7 +26,7 @@ Chainlink, Succinct state queries optimize for flexibility, latency and low gas 
 
 Function Gateway (Goerli): [0xE304f6B116bE5e43424cEC36a5eFd0B642E0dC95](https://goerli.etherscan.io/address/0xE304f6B116bE5e43424cEC36a5eFd0B642E0dC95)
 
-Function ID (Goerli): [0xd963c3c7a53ffeb8851d88bda4a30c4557dd0bf4025f291569ccad25c0d1dc2f](https://goerli.etherscan.io/address/0xE304f6B116bE5e43424cEC36a5eFd0B642E0dC95)
+Function ID (Goerli): [0x89125699d8b9207cf13cbca9ce1819192c4aef5cd2b652ed6916c74ba74339fc](https://goerli.etherscan.io/address/0xE304f6B116bE5e43424cEC36a5eFd0B642E0dC95)
 
 **Onchain Requests**
 
@@ -64,7 +64,7 @@ contract Example {
 
     /// @notice The function id of the ethcall oracle.
     bytes32 public constant FUNCTION_ID =
-        0xd963c3c7a53ffeb8851d88bda4a30c4557dd0bf4025f291569ccad25c0d1dc2f;
+        0x89125699d8b9207cf13cbca9ce1819192c4aef5cd2b652ed6916c74ba74339fc;
 
     /// @notice The nonce of the oracle.
     uint256 public nonce = 0;
