@@ -31,7 +31,7 @@ Function ID (Goerli): [0xd963c3c7a53ffeb8851d88bda4a30c4557dd0bf4025f291569ccad2
 
 Import the following interface in your dApp or smart contract.
 
-```sol
+```solidity
 interface IFunctionGateway {
     function requestCallback(
         bytes32 _functionId,
@@ -60,7 +60,7 @@ interface IFunctionGateway {
 
 Make an onchain request and define a callback entrypoint.
 
-```sol
+```solidity
 function requestCallback(
     uint32 chainId,
     uint64 blockNumber,
