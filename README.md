@@ -25,6 +25,7 @@ Chainlink, Succinct state queries optimize for flexibility, latency and low gas 
 **Contract Addresses**
 
 Function Gateway (Goerli): [0xE304f6B116bE5e43424cEC36a5eFd0B642E0dC95](https://goerli.etherscan.io/address/0xE304f6B116bE5e43424cEC36a5eFd0B642E0dC95)
+
 Function ID (Goerli): [0xd963c3c7a53ffeb8851d88bda4a30c4557dd0bf4025f291569ccad25c0d1dc2f](https://goerli.etherscan.io/address/0xE304f6B116bE5e43424cEC36a5eFd0B642E0dC95)
 
 **Onchain Requests**
